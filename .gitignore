@@ -5,5 +5,7 @@ data/
 weights/
 training_runs/
 
+./test*.jpg
+
 *.pth
 *.zip
