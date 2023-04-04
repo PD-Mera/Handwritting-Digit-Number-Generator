@@ -24,7 +24,7 @@ You can download pretrained weight from [here](https://drive.google.com/file/d/1
 
 ## Train
 
-You can modify config in `cfg/cfg.yaml` and run
+You can modify config in `cfg/cfg.py` and run
 
 ``` bash
 python tools/train.py
