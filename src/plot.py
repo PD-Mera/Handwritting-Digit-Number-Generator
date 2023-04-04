@@ -33,3 +33,4 @@ def draw_plot(inputs: torch.Tensor, config: Config, **kwarg):
         os.makedirs(config.output_dir, exist_ok=True)
         plt.savefig(os.path.join(config.output_dir, savefig_name))
 
+    plt.close()

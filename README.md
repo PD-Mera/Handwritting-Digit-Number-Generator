@@ -2,7 +2,7 @@
 
 Super basic GAN pipeline to generate Handwritting MNIST Number
 
-![asset](./assets/sample.jpg "asset")
+![asset](./assets/sample_280.jpg "asset")
 
 ## Environments
 
@@ -16,7 +16,11 @@ bash scripts/setup_environments
 
 ## Data
 
-You can download MNIST dataset from [here](https://drive.google.com/file/d/1JimUxm4tpbsg2zOqbGnbJDzJHwgp6by7/view?usp=share_link) or use torch dataset
+You can download MNIST dataset from [here](https://drive.google.com/file/d/1JimUxm4tpbsg2zOqbGnbJDzJHwgp6by7/view?usp=share_link), use torch dataset or simply run this script
+
+``` bash
+bash scripts/download_data.sh
+```
 
 ## Checkpoint
 

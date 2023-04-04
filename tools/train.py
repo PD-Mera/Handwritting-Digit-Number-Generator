@@ -37,6 +37,7 @@ def train(config: Config):
 
     criterion = nn.BCELoss()
 
+    fixed_noise = torch.randn([config.num_col * config.num_row, config.input_dims]).to(device)
 
     for epoch in range(config.EPOCH):
         for idx, image in enumerate(train_loader):
@@ -47,7 +48,7 @@ def train(config: Config):
             
             # Train D
             net_D.train()
-            net_G.eval()
+            net_G.train()
             net_D.zero_grad()
 
             real_D = net_D(image)
@@ -63,8 +64,6 @@ def train(config: Config):
             optim_D.step()
 
             # train G
-            net_D.eval()
-            net_G.train()
             net_G.zero_grad()
 
             real_D = net_D(image)
@@ -83,7 +82,7 @@ def train(config: Config):
         # eval step
 
         net_G.eval()
-        inputs = torch.randn([config.num_col * config.num_row, config.input_dims]).to(device)
+        inputs = fixed_noise
 
         outputs = net_G(inputs)
 
